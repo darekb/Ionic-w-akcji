@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Ionic w akcji</title>
+
+		<meta name="description" content="">
+		<meta name="author" content="Dariusz Biedrzycki">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Ionic w akcji</h1>
+					<p>
+						<small>Created by <a href="http://3w-media.pl">Dariusz Biedrzycki</a> / kontakt@3wm.pl / Mobiem.pl</small>
+					</p>
+				</section>
+
+
+
+				<!-- Example of nested vertical slides -->
+				<section>
+						<h2>Po co?</h2>
+            <p class="fragment">Prezentacja</p>
+            <p class="fragment">Jeden kod dwie aplikacje</p>
+				</section>
+
+				
+				<section>
+          <section>
+					 <h2>Co to?</h2>
+          </section>
+          <section>
+            <svg width="800" height="600">
+              <g  transform="scale(2)">
+                <g>
+                  <rect x="0" y="0" width="400" height="50" fill="white"/>
+                  <text fill="#000" font-size="35" font-family="Verdana" x="120" y="35">WebView</text>
+                </g>
+                <g transform="translate(0, 80)" class="fragment">
+                  <rect x="0" y="0" width="400" height="50" fill="white"/>
+                  <text fill="#000" font-size="35" font-family="Verdana" x="40" y="35">Cordova/Phonegap</text>
+                </g> 
+                <g transform="translate(0, 160)" class="fragment">
+                  <rect x="0" y="0" width="400" height="50" fill="white"/>
+                  <text fill="#000" font-size="35" font-family="Verdana" x="100" y="35">Angular/Ionic</text>
+                </g>
+              </g>
+            </svg>
+          </section>
+          <section>
+            <h2>Dwa sposoby</h2>
+            <p class="fragment">Używamy jako zestaw class i styli (czyli tylko css)</p>
+            <p class="fragment">Używamy jako framework z angularem i dyrektywami</p>
+          </section>
+				<aside class="notes">
+				</aside>
+				</section>
+
+        <section>
+          <section>
+            <h2>Instalacja</h2>
+          </section>
+          <section>
+            <pre><code class="hljs bash" style="font-size:28px; text-align:center;">
+$ npm install -g cordova ionic
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="hljs bash" style="font-size:28px; text-align:center;">
+$ ionic start myApp tabs
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="hljs bash" style="font-size:28px; text-align:center;">
+$ ionic start myApp sidemenu
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="hljs bash" style="font-size:28px; line-height:34px; text-align:left;">
+            1. $ cd myApp
+            2. $ ionic platform add ios
+            3. $ ionic build ios
+            4. $ sudo npm install -g ios-sim
+            5. $ ionic emulate ios
+            </code></pre>
+          </section>
+          <section>
+            <pre><code class="hljs bash" style="font-size:28px; line-height:34px; text-align:left;">
+            1. $ cd myApp
+            2. $ ionic platform add ios
+            3. $ ionic build ios
+            </code></pre>
+            <p>Uruchom Xcode</p>
+          </section>
+          <section>
+            <pre><code class="hljs bash" style="font-size:28px; line-height:34px; text-align:left;">
+            1. $ cd myApp
+            2. $ ionic platform add android
+            3. $ ionic build android
+            4. $ ionic emulate android
+            </code></pre>
+          </section>
+          <section>
+            <p>Uruchom genymotion</p>
+            <pre><code class="hljs bash" style="font-size:28px; line-height:34px; text-align:left;">
+            1. $ cd myApp
+            2. $ ionic platform add android
+            3. $ ionic build android
+            4. $ ionic run android
+            </code></pre>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Zaczynamy pracę</h2>
+          </section>
+          <section>
+            <pre><code class="hljs bash" style="font-size:28px; text-align:center;">
+  $ ionic serve
+            </code></pre>
+            <pre><code class="hljs bash" style="font-size:28px; text-align:center;">
+  $ gulp watch
+            </code></pre>
+            <aside class="notes"></aside>
+          </section>
+          <section>
+            <pre><code class="hljs bash" style="font-size:28px; text-align:center;">
+  $ ionic build
+            </code></pre>
+          </section>
+        </section>
+
+
+
+				<section>
+          <section>
+					 <h2>Dziegieć</h2>
+          </section>
+          <section>
+            <h2>Brak domyślnej optymalizacji styli i javascriptów</h2>
+            <p class="fragment">Rozwiązanie: gulpStartupTasks w ionic.project i własne skrypty w hooks</p>
+          </section>
+          <section>
+            <h2>Ręczne doinstalowanie pluginów</h2>
+            <p>
+  $ cordova plugin add https://github.com/ccsoft/cordova-facebook
+            </p>
+            <h3>kopiujemy pliki</h3>
+            <p>
+  $ cp plugins/org.apache.cordova.cordova-facebook/src/ios platforms/ios/[nazwa_projektu]/Plugins/org.apache.cordova.cordova-facebook
+            </p>
+          </section>
+          <section>
+            <h2>WebView</h2>
+            <div  class="fragment">
+              <p>Rozwiązanie: https://crosswalk-project.org/</p>
+              <pre><code class="hljs bash" style="font-size:28px; text-align:center;">
+  $ ionic browser add crosswalk
+              </code></pre>
+            </div>
+          </section>
+				</section>
+
+
+				<section>
+          <section>
+					 <h2>Tips and trics</h2>
+          </section>
+          <section>
+            <h2>Generatory trzech typów aplikacji</h2>
+            <pre class="fragment"><code class="hljs bash" style="font-size:28px; text-align:center;">
+$ ionic start [nazwa_twojej_aplikacji] tabs
+            </code></pre>
+            <pre class="fragment"><code class="hljs bash" style="font-size:28px; text-align:center;">
+$ ionic start [nazwa_twojej_aplikacji] sidemenu
+            </code></pre>
+            <pre class="fragment"><code class="hljs bash" style="font-size:28px; text-align:center;">
+$ ionic start [nazwa_twojej_aplikacji] blank
+            </code></pre>
+          </section>
+          <section>
+            <h2>Wydajność długich list</h2>
+            <pre  class="fragment"><code class="hljs html" style="font-size:20px;">
+<ion-list>
+  <ion-item data-ng-repeat="thread in threads">
+    <img data-ng-src="{{thread.avatar_url}}" class="avatarImg">
+    <h3>{{thread.nick}}</h3>
+  </ion-item>
+</ion-list>
+            </code></pre>
+            <pre  class="fragment"><code class="hljs html" style="font-size:20px; word-wrap: break-word;">
+<ion-list>
+  <ion-item collection-repeat="thread in threads" 
+  collection-item-width="'100%'" 
+  collection-item-height="80" 
+  style="height:80px; positon:absolute; width:100%;">
+    <img data-ng-src="{{thread.avatar_url}}" class="avatarImg">
+    <h3>{{thread.nick}}</h3>
+  </ion-item>
+</ion-list>
+            </code></pre>
+          </section>
+          <section>
+            <p>plik: ionic.project przed</p>
+            <pre><code class="hljs javascript" style="font-size:28px; line-height:34px;">
+    {
+      "name": "myApp",
+      "app_id": ""
+    }
+            </code></pre>
+            <aside class="notes"></aside>
+            <p>plik: ionic.project po</p>
+            <pre><code class="hljs javascript" style="font-size:28px; line-height:34px;">
+    {
+      "name": "myApp",
+      "app_id": "",
+      "gulpStartupTasks": [
+        "watch"
+      ]
+    }
+            </code></pre>
+            <aside class="notes"></aside>
+          </section>
+          <section>
+            <p>modyfikacja hooks</p>
+            <p><a href="http://blog.ionic.io/minifying-your-source-code/">http://blog.ionic.io/minifying-your-source-code/</a></p>
+            <aside class="notes"></aside>
+          </section>
+				</section>
+
+				<section>
+					<h2>Dziękuję</h2>
+					<p>Dariusz Biedrzycki</p>
+					<p>kontakt@3wm.pl</p>
+					<p>Mobiem.pl</p>
+        </section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+ 	</script>
+ <!-- <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35000/livereload.js"></' + 'script>')</script>
+         <script src='http://localhost:3000/socket.io/socket.io.js'></script>
+         <script src='http://localhost:3001/browser-sync-client.min.js'></script> -->
+	</body>
+</html>
