@@ -1,3 +1,4 @@
-# AngularJS Warsaw #1 
+# AngularJS Warsaw #8
 
 ## Ionic w akcji 
+Prezentacja 
